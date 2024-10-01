@@ -68,7 +68,7 @@ goto fail
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\greeting-server-1.0-SNAPSHOT.jar;%APP_HOME%\lib\slf4j-simple-2.0.9.jar;%APP_HOME%\lib\slf4j-api-2.0.9.jar;%APP_HOME%\lib\jcommander-2.0.jar
+set CLASSPATH=%APP_HOME%\lib\greeting-server-1.0-SNAPSHOT.jar;%APP_HOME%\lib\slf4j-simple-2.0.9.jar;%APP_HOME%\lib\slf4j-api-2.0.9.jar;%APP_HOME%\lib\jcommander-2.0.jar;%APP_HOME%\lib\javafaker-1.0.2.jar;%APP_HOME%\lib\jfiglet-0.0.9.jar;%APP_HOME%\lib\commons-lang3-3.5.jar;%APP_HOME%\lib\snakeyaml-1.23-android.jar;%APP_HOME%\lib\generex-1.0.2.jar;%APP_HOME%\lib\automaton-1.11-8.jar
 
 
 @rem Execute greeting-server

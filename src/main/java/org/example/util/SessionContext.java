@@ -1,8 +1,11 @@
 package org.example.util;
 
+import lombok.Getter;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Getter
 public class SessionContext {
     private final Map<String,String> attributes = new HashMap<String,String>();
     public void add(String key,String value){

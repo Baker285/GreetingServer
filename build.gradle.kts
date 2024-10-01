@@ -29,20 +29,23 @@ dependencies {
     implementation("org.jcommander:jcommander:2.0")
 // Mockito
     testImplementation("org.mockito:mockito-core:5.13.0")
+//Faker
+    implementation("com.github.javafaker:javafaker:1.0.2")
+//Figlet
+    implementation("com.github.lalyos:jfiglet:0.0.9")
 }
-
-tasks.jar{
-    manifest{
-        attributes["Main-Class"] = "org.example.util.GreetingServerApplication"
+    tasks.jar {
+        manifest {
+            attributes["Main-Class"] = "org.example.util.GreetingServerApplication"
+        }
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        from({
+            configurations.runtimeClasspath.get().filter {
+                it.name.endsWith(".jar")
+            }.map { zipTree(it) }
+        })
     }
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    from({
-        configurations.runtimeClasspath.get().filter{
-            it.name.endsWith(".jar")
-        }.map{zipTree(it)}
-    })
-}
 
-tasks.test {
-    useJUnitPlatform()
-}
+    tasks.test {
+        useJUnitPlatform()
+    }

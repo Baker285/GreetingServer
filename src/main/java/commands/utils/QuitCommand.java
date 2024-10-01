@@ -10,7 +10,7 @@ import java.util.List;
 public class QuitCommand implements Command {
     @Override
     public boolean execute(List<String> arguments, Reader in, PrintWriter out, SessionContext sessionContext) {
-        out.println("202 BYE");
+        out.printf("202 %s",sessionContext.get("FAREWELL"));
         return false;
     }
 }
