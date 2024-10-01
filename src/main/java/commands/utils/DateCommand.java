@@ -13,7 +13,6 @@ public class DateCommand implements Command {
     @Override
     public boolean execute(List<String> arguments, Reader in, PrintWriter out, SessionContext sessionContext) {
         String value = String.join("",arguments);
-        value = value.trim();
         Set<String> allFormats = getAllDateTimeFormats();
         for (String availableFormat : allFormats) {
             if(value.equals(availableFormat)){

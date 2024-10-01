@@ -16,6 +16,9 @@ public class GreetingServerApplication {
     @Parameter(names = {"--timeout","-t"},description = "idle timeout value for each connection")
     private int timeout = 5000;
 
+    @Parameter(names = {"--motd","-m"},description = "the message that the user will see when server starts")
+    private String message = "Welcome";
+
     public static void main(String[] args) throws IOException {
         GreetingServerApplication app = new GreetingServerApplication();
         JCommander jCommander = JCommander.newBuilder()
@@ -26,7 +29,7 @@ public class GreetingServerApplication {
     }
 
     public void run() throws IOException {
-        String asciiArt = FigletFont.convertOneLine("Welcome To Greeting Server");
+        String asciiArt = FigletFont.convertOneLine(message);
         System.out.println(asciiArt);
         GreetingServer greetingServer = new GreetingServer(port,timeout);
         greetingServer.start();

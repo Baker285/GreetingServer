@@ -23,6 +23,7 @@ public class ResetCommand implements Command {
                     deleted ? 200 : 400,
                     deleted ? "successful" : "failed");
         }
+        sessionContext.getAttributes().clear();
         return true;
     }
 }
